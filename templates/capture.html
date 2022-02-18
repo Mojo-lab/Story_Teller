@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <title>StoryTeller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+  	<center>
+  	<h1>StoryTeller</h1>
+      <div id="camera">
+	     <img src="{{ url_for('static', filename=path) }}" alt="capture">
+      </div>
+      <div id="btns-div">
+        <a href="{{ url_for('root') }}">
+          <img src="{{ url_for('static',filename='back.png') }}" alt="go back" class="btn"> 
+        </a>
+        <a href="{{ url_for('static', filename=path) }}" download>
+          <img src="{{ url_for('static',filename='download.png') }}" alt="save picture" class="btn">
+        </a>
+        <a href="{{ url_for('result') }}" id="voice">
+            <img src="{{ url_for('static',filename='read.png') }}" alt="read text" class="btn">
+        </a>
+         <a href="{{ url_for('result') }}" id="voice">
+            <img src="{{ url_for('static',filename='text.png') }}" alt="read text" class="btn">
+        </a>
+      </div>
+		</center>
+  </body>
+</html>
+
+<script>
+  $(document).ready(function(){
+
+   $('#email').click(function () {
+      $('#input-hidden').css({'visibility':'visible','display':'block'})
+    });
+ })
+</script>
